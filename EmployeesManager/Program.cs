@@ -1,5 +1,7 @@
+using EmployeesManager.Context;
 using EmployeesManager.Views;
 using MaterialSkin;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
@@ -27,7 +29,8 @@ internal static class Program
         services.AddLogging(configure => configure.AddConsole())
                 .AddSingleton<MainForm>()
                 .AddSingleton<AddingEmployeeForm>()
-                .AddSingleton(x => MaterialSkinManager.Instance);
+                .AddSingleton(x => MaterialSkinManager.Instance)
+                .AddDbContext<MainCTX>(options=> options.UseSqlite("Filename=MainCTX.db")); // It would be possible to export it to the configuration file, but not today...
 
         return services.BuildServiceProvider();
     }
