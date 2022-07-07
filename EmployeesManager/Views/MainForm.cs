@@ -2,7 +2,6 @@ using EmployeesManager.Context;
 using EmployeesManager.Views.Page;
 using MaterialSkin;
 using MaterialSkin.Controls;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace EmployeesManager.Views;
@@ -35,20 +34,20 @@ public partial class MainForm : MaterialForm
 
         materialTabControl1_SelectedIndexChanged(materialTabControl, null); //invoke to load default tab (main)
     }
-    private void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
+    private async void materialTabControl1_SelectedIndexChanged(object sender, EventArgs e)
     {
         try
         {
             switch ((sender as TabControl)?.SelectedIndex)
             {
                 case 0:
-                    pageWithDataGridControlMain.UpdateView();
+                    await pageWithDataGridControlMain.UpdateView();
                     break;
                 case 1:
-                    pageWithDataGridControlDepartments.UpdateView();
+                    await pageWithDataGridControlDepartments.UpdateView();
                     break;
                 case 2:
-                    pageWithDataGridControlPositions.UpdateView();
+                    await pageWithDataGridControlPositions.UpdateView();
                     break;
                 case 3:
                     payoutsPageControl.ShowUpdate();

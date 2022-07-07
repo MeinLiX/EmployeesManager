@@ -11,12 +11,19 @@ public class DepartmentsDGManagment : BaseDGManagment
 
     public override void BuildHeader()
     {
-        _View.Columns.Add(new DataGridViewColumn() { HeaderText = "ID" });
-        _View.Columns.Add(new DataGridViewColumn() { HeaderText = "Department" });
+        _View.ColumnCount = 2;
+        _View.ColumnHeadersVisible = true;
+
+        _View.Columns[0].Name = "ID";
+        _View.Columns[0].Visible = false;
+
+        _View.Columns[1].Name = "Department";
     }
 
     public override Task UpdateData()
     {
+        base.UpdateData();
+
         var parsedDepartments = _mainCTX.Departments?.Select(d => new string[]
         {
             d.DepartmentID.ToString(),

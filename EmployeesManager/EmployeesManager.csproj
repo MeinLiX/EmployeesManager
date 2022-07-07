@@ -23,7 +23,6 @@
 
   <ItemGroup>
     <Folder Include="Resources\Icons\" />
-    <Folder Include="Views\ModifyWindows\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,6 +30,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ModifyWindows\EmployeeEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Views\ModifyWindows\PositionEditorForm.cs">
+      <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
 

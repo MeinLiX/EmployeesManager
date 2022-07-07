@@ -11,12 +11,19 @@ internal class PositionsDGManagment : BaseDGManagment
 
     public override void BuildHeader()
     {
-        _View.Columns.Add(new DataGridViewColumn() { HeaderText = "ID" });
-        _View.Columns.Add(new DataGridViewColumn() { HeaderText = "Position" });
+        _View.ColumnCount = 2;
+        _View.ColumnHeadersVisible = true;
+
+        _View.Columns[0].Name = "ID";
+        _View.Columns[0].Visible = false;
+
+        _View.Columns[1].Name = "Position";
     }
 
     public override Task UpdateData()
     {
+        base.UpdateData();
+
         var parsedPositions = _mainCTX.Positions?.Select(p => new string[]
         {
             p.PositionID.ToString(),
@@ -24,8 +31,8 @@ internal class PositionsDGManagment : BaseDGManagment
         });
 
         if (parsedPositions is not null)
-            foreach (var department in parsedPositions)
-                _View.Rows.Add(department);
+            foreach (var position in parsedPositions)
+                _View.Rows.Add(position);
 
         return Task.CompletedTask;
     }

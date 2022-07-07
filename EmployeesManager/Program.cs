@@ -1,5 +1,6 @@
 using EmployeesManager.Context;
 using EmployeesManager.Views;
+using EmployeesManager.Views.ModifyWindows;
 using MaterialSkin;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,9 +28,13 @@ internal static class Program
     private static ServiceProvider ConfigureServices(ServiceCollection services)
     {
         services.AddLogging(configure => configure.AddConsole())
-                .AddSingleton<MainForm>()
+                .AddDbContext<MainCTX>(options => options.UseSqlite("Filename=MainCTX.db")) // It would be possible to export it to the configuration file, but not today...
                 .AddSingleton(x => MaterialSkinManager.Instance)
-                .AddDbContext<MainCTX>(options => options.UseSqlite("Filename=MainCTX.db")); // It would be possible to export it to the configuration file, but not today...
+                .AddSingleton<MainForm>()
+                .AddSingleton<DepartmentEditorForm>()
+                .AddSingleton<EmployeeEditorForm>()
+                .AddSingleton<PositionEditorForm>();
+
 
         return services.BuildServiceProvider();
     }

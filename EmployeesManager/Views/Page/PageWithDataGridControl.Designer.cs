@@ -30,7 +30,7 @@
         {
             this.materialCard = new MaterialSkin.Controls.MaterialCard();
             this.materialButtonDelete = new MaterialSkin.Controls.MaterialButton();
-            this.materialButtonUpdate = new MaterialSkin.Controls.MaterialButton();
+            this.materialButtonEdit = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonAdd = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.materialCard.SuspendLayout();
@@ -41,7 +41,7 @@
             // 
             this.materialCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialCard.Controls.Add(this.materialButtonDelete);
-            this.materialCard.Controls.Add(this.materialButtonUpdate);
+            this.materialCard.Controls.Add(this.materialButtonEdit);
             this.materialCard.Controls.Add(this.materialButtonAdd);
             this.materialCard.Depth = 0;
             this.materialCard.Dock = System.Windows.Forms.DockStyle.Top;
@@ -61,7 +61,7 @@
             this.materialButtonDelete.Depth = 0;
             this.materialButtonDelete.HighEmphasis = true;
             this.materialButtonDelete.Icon = null;
-            this.materialButtonDelete.Location = new System.Drawing.Point(161, 7);
+            this.materialButtonDelete.Location = new System.Drawing.Point(152, 7);
             this.materialButtonDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonDelete.Name = "materialButtonDelete";
@@ -74,24 +74,25 @@
             this.materialButtonDelete.UseVisualStyleBackColor = true;
             this.materialButtonDelete.Click += new System.EventHandler(this.materialButtonDelete_Click);
             // 
-            // materialButtonUpdate
+            // materialButtonEdit
             // 
-            this.materialButtonUpdate.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButtonUpdate.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButtonUpdate.Depth = 0;
-            this.materialButtonUpdate.HighEmphasis = true;
-            this.materialButtonUpdate.Icon = null;
-            this.materialButtonUpdate.Location = new System.Drawing.Point(76, 7);
-            this.materialButtonUpdate.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButtonUpdate.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButtonUpdate.Name = "materialButtonUpdate";
-            this.materialButtonUpdate.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButtonUpdate.Size = new System.Drawing.Size(77, 36);
-            this.materialButtonUpdate.TabIndex = 1;
-            this.materialButtonUpdate.Text = "Update";
-            this.materialButtonUpdate.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButtonUpdate.UseAccentColor = false;
-            this.materialButtonUpdate.UseVisualStyleBackColor = true;
+            this.materialButtonEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButtonEdit.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.materialButtonEdit.Depth = 0;
+            this.materialButtonEdit.HighEmphasis = true;
+            this.materialButtonEdit.Icon = null;
+            this.materialButtonEdit.Location = new System.Drawing.Point(80, 7);
+            this.materialButtonEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButtonEdit.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButtonEdit.Name = "materialButtonEdit";
+            this.materialButtonEdit.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.materialButtonEdit.Size = new System.Drawing.Size(64, 36);
+            this.materialButtonEdit.TabIndex = 1;
+            this.materialButtonEdit.Text = "Edit";
+            this.materialButtonEdit.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButtonEdit.UseAccentColor = false;
+            this.materialButtonEdit.UseVisualStyleBackColor = true;
+            this.materialButtonEdit.Click += new System.EventHandler(this.materialButtonEdit_Click);
             // 
             // materialButtonAdd
             // 
@@ -100,7 +101,7 @@
             this.materialButtonAdd.Depth = 0;
             this.materialButtonAdd.HighEmphasis = true;
             this.materialButtonAdd.Icon = null;
-            this.materialButtonAdd.Location = new System.Drawing.Point(4, 7);
+            this.materialButtonAdd.Location = new System.Drawing.Point(8, 7);
             this.materialButtonAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonAdd.Name = "materialButtonAdd";
@@ -111,6 +112,7 @@
             this.materialButtonAdd.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.materialButtonAdd.UseAccentColor = false;
             this.materialButtonAdd.UseVisualStyleBackColor = true;
+            this.materialButtonAdd.Click += new System.EventHandler(this.materialButtonAdd_Click);
             // 
             // dataGridView
             // 
@@ -156,7 +158,7 @@
 
         private MaterialSkin.Controls.MaterialCard materialCard;
         private MaterialSkin.Controls.MaterialButton materialButtonDelete;
-        private MaterialSkin.Controls.MaterialButton materialButtonUpdate;
+        private MaterialSkin.Controls.MaterialButton materialButtonEdit;
         private MaterialSkin.Controls.MaterialButton materialButtonAdd;
         private DataGridView dataGridView;
     }

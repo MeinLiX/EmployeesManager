@@ -13,9 +13,13 @@ public abstract class BaseDGManagment
     }
 
     public abstract void BuildHeader();
-    public abstract Task UpdateData();
+    public virtual Task UpdateData()
+    {
+        _View.Rows.Clear();
+        return Task.CompletedTask;
+    }
 
-    public virtual Guid GetSelectedRow()
+    public virtual Guid GetSelectedRowID()
     {
         if(_View.Rows.Count == 0)
         {
@@ -24,11 +28,11 @@ public abstract class BaseDGManagment
 
         var firstSelectedRow = _View.SelectedRows.Cast<DataGridViewRow>().FirstOrDefault();
 
-        if (firstSelectedRow is null)
+        if (firstSelectedRow?.Cells["ID"]?.Value is null)
         {
             throw new Exception("Not found selected item");
         }
 
-        return new Guid(firstSelectedRow.Cells["ID"].ToString());
+        return new Guid(firstSelectedRow.Cells["ID"].Value.ToString());
     }
 }

@@ -117,6 +117,7 @@
             this.tabPagePositions.ImageKey = "candidate.png";
             this.tabPagePositions.Location = new System.Drawing.Point(4, 39);
             this.tabPagePositions.Name = "tabPagePositions";
+            this.tabPagePositions.Padding = new System.Windows.Forms.Padding(3);
             this.tabPagePositions.Size = new System.Drawing.Size(796, 390);
             this.tabPagePositions.TabIndex = 2;
             this.tabPagePositions.Text = "Positions";
@@ -126,9 +127,9 @@
             // 
             this.pageWithDataGridControlPositions.AutoSize = true;
             this.pageWithDataGridControlPositions.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pageWithDataGridControlPositions.Location = new System.Drawing.Point(0, 0);
+            this.pageWithDataGridControlPositions.Location = new System.Drawing.Point(3, 3);
             this.pageWithDataGridControlPositions.Name = "pageWithDataGridControlPositions";
-            this.pageWithDataGridControlPositions.Size = new System.Drawing.Size(796, 390);
+            this.pageWithDataGridControlPositions.Size = new System.Drawing.Size(790, 384);
             this.pageWithDataGridControlPositions.TabIndex = 1;
             // 
             // tabPagePayouts

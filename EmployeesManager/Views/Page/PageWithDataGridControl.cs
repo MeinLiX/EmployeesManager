@@ -1,5 +1,7 @@
 ﻿
 using EmployeesManager.Context;
+using EmployeesManager.Views.ModifyWindows;
+using EmployeesManager.Views.ModifyWindows.Interfaces;
 using EmployeesManager.Views.Page.DataGridManagment;
 using EmployeesManager.Views.Page.DataGridManagment.Interfaces;
 using MaterialSkin.Controls;
@@ -10,6 +12,7 @@ namespace EmployeesManager.Views.Page;
 
 public partial class PageWithDataGridControl : UserControl
 {
+    private IServiceProvider _serviceProvider;
     private ILogger _logger;
     private MainCTX _mainCTX;
     private ControlMode _currentMode;
@@ -23,6 +26,7 @@ public partial class PageWithDataGridControl : UserControl
     {
         _currentMode = mode;
 
+        _serviceProvider = serviceProvider;
         _logger = serviceProvider.GetRequiredService<ILogger<PageWithDataGridControl>>();
         _mainCTX = serviceProvider.GetRequiredService<MainCTX>();
 
@@ -68,20 +72,19 @@ public partial class PageWithDataGridControl : UserControl
             CheckServices();
             await (_currentMode switch
             {
-                ControlMode.Employees => DeleteEmployee(_dgManagment.GetSelectedRow()),
-                ControlMode.Departments => DeleteDepartment(_dgManagment.GetSelectedRow()),
-                ControlMode.Positions => DeletePosition(_dgManagment.GetSelectedRow()),
+                ControlMode.Employees => DeleteEmployee(_dgManagment.GetSelectedRowID()),
+                ControlMode.Departments => DeleteDepartment(_dgManagment.GetSelectedRowID()),
+                ControlMode.Positions => DeletePosition(_dgManagment.GetSelectedRowID()),
             });
             await _dgManagment.UpdateData();
-            resultMessage = $"{_currentMode} is deleted.";
+            resultMessage = $"{_currentMode.ToString()[..^1]} is deleted.";
         }
         catch (Exception error)
         {
             resultMessage = error.Message;
         }
 
-        MaterialSnackBar SnackBarMessage = new(resultMessage, 1000);
-        SnackBarMessage.Show(this);
+        new MaterialSnackBar(resultMessage, 1000).Show(this);
     }
 
 
@@ -105,4 +108,59 @@ public partial class PageWithDataGridControl : UserControl
     }
     #endregion
 
+    private async void materialButtonAdd_Click(object sender, EventArgs e)
+    {
+        MaterialForm editForm = GetEditForm();
+
+        if (this.Parent is TabPage parentPage)
+            if (parentPage.Parent is MaterialTabControl parentTabControll)
+                if (parentTabControll.Parent is MainForm parentForm)
+                {
+                    DialogResult dialogResult = parentForm.OpenDialogWithShadow(editForm);
+
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        await _dgManagment.UpdateData();
+                        new MaterialSnackBar($"{_currentMode.ToString()[..^1]} is created.", 1000).Show(this);
+                    }
+
+                }
+    }
+
+    private async void materialButtonEdit_Click(object sender, EventArgs e)
+    {
+        MaterialForm editForm = GetEditForm();
+
+        if (this.Parent is TabPage parentPage)
+            if (parentPage.Parent is MaterialTabControl parentTabControll)
+                if (parentTabControll.Parent is MainForm parentForm)
+                {
+                    if (editForm is IEditorForm editorForm)
+                    {
+                        try
+                        {
+                            editorForm.ConfigureEditeMode(_dgManagment.GetSelectedRowID());
+                        }
+                        catch (Exception error)
+                        {
+                            new MaterialSnackBar(error.Message, 1000).Show(this);
+                            return;
+                        }
+                        DialogResult dialogResult = parentForm.OpenDialogWithShadow(editForm);
+
+                        if (dialogResult == DialogResult.OK)
+                        {
+                            await _dgManagment.UpdateData();
+                            new MaterialSnackBar($"{_currentMode.ToString()[..^1]} is updated.", 1000).Show(this);
+                        }
+                    }
+                }
+    }
+
+    private MaterialForm GetEditForm() => _currentMode switch
+    {
+        ControlMode.Employees => _serviceProvider.GetRequiredService<EmployeeEditorForm>(),
+        ControlMode.Departments => _serviceProvider.GetRequiredService<DepartmentEditorForm>(),
+        ControlMode.Positions => _serviceProvider.GetRequiredService<PositionEditorForm>(),
+    };
 }
