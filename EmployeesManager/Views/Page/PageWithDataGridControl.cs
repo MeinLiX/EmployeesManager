@@ -70,6 +70,13 @@ public partial class PageWithDataGridControl : UserControl
         try
         {
             CheckServices();
+
+            DialogResult resultToDelete = new MaterialDialog(this.Parent.Parent.Parent as MainForm, "Delete item", "Are you sure you want to delete the item?", "Delete", true, "Cancel").ShowDialog(this);
+            if (resultToDelete == DialogResult.Cancel)
+            {
+                return;
+            }
+
             await (_currentMode switch
             {
                 ControlMode.Employees => DeleteEmployee(_dgManagment.GetSelectedRowID()),
@@ -83,7 +90,7 @@ public partial class PageWithDataGridControl : UserControl
         {
             resultMessage = error.Message;
         }
-
+        
         new MaterialSnackBar(resultMessage, 1000).Show(this);
     }
 

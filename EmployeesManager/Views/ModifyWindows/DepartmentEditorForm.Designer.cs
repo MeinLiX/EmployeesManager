@@ -113,7 +113,7 @@
             this.materialButtonCancel.Depth = 0;
             this.materialButtonCancel.HighEmphasis = true;
             this.materialButtonCancel.Icon = null;
-            this.materialButtonCancel.Location = new System.Drawing.Point(299, 12);
+            this.materialButtonCancel.Location = new System.Drawing.Point(211, 12);
             this.materialButtonCancel.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.materialButtonCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonCancel.Name = "materialButtonCancel";
@@ -135,7 +135,7 @@
             this.materialButtonCreate.Depth = 0;
             this.materialButtonCreate.HighEmphasis = true;
             this.materialButtonCreate.Icon = null;
-            this.materialButtonCreate.Location = new System.Drawing.Point(211, 12);
+            this.materialButtonCreate.Location = new System.Drawing.Point(300, 12);
             this.materialButtonCreate.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.materialButtonCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonCreate.Name = "materialButtonCreate";
@@ -161,7 +161,7 @@
             this.materialLabelDepartmentName.TabIndex = 4;
             this.materialLabelDepartmentName.Text = "Department name";
             // 
-            // AddingDepartmentForm
+            // DepartmentEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +171,7 @@
             this.Controls.Add(this.materialCardHeader);
             this.Controls.Add(this.materialTextBoxDepartmentName);
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.StatusAndActionBar_None;
-            this.Name = "AddingDepartmentForm";
+            this.Name = "DepartmentEditorForm";
             this.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;

@@ -110,7 +110,7 @@
             this.materialButtonCancel.Depth = 0;
             this.materialButtonCancel.HighEmphasis = true;
             this.materialButtonCancel.Icon = null;
-            this.materialButtonCancel.Location = new System.Drawing.Point(454, 12);
+            this.materialButtonCancel.Location = new System.Drawing.Point(367, 12);
             this.materialButtonCancel.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.materialButtonCancel.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonCancel.Name = "materialButtonCancel";
@@ -132,7 +132,7 @@
             this.materialButtonCreate.Depth = 0;
             this.materialButtonCreate.HighEmphasis = true;
             this.materialButtonCreate.Icon = null;
-            this.materialButtonCreate.Location = new System.Drawing.Point(366, 12);
+            this.materialButtonCreate.Location = new System.Drawing.Point(456, 12);
             this.materialButtonCreate.Margin = new System.Windows.Forms.Padding(6, 4, 6, 4);
             this.materialButtonCreate.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonCreate.Name = "materialButtonCreate";
@@ -477,7 +477,7 @@
             this.materialTextBoxEmployeeSalary.UseTallSize = false;
             this.materialTextBoxEmployeeSalary.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialTextBoxEmployeeSalary_KeyPress);
             // 
-            // AddingEmployeeForm
+            // EmployeeEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -503,7 +503,7 @@
             this.Controls.Add(this.materialCardFoother);
             this.Controls.Add(this.materialCardHeader);
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.StatusAndActionBar_None;
-            this.Name = "AddingEmployeeForm";
+            this.Name = "EmployeeEditorForm";
             this.Padding = new System.Windows.Forms.Padding(3, 0, 3, 3);
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
