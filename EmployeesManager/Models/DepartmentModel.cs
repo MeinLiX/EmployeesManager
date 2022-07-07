@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EmployeesManager.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeesManager.Models;
 
-public class DepartmentModel
+public class DepartmentModel : IModel
 {
     [Key]
     public Guid DepartmentID { get; set; }

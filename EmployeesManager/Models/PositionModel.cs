@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EmployeesManager.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeesManager.Models;
 
-public class PositionModel
+public class PositionModel : IModel
 {
     [Key]
     public Guid PositionID { get; set; }

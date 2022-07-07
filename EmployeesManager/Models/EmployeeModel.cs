@@ -1,8 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using EmployeesManager.Models.Interfaces;
+using System.ComponentModel.DataAnnotations;
 
 namespace EmployeesManager.Models;
 
-public class EmployeeModel
+public class EmployeeModel : IModel
 {
     [Key]
     public Guid EmployeeID { get; set; }
@@ -23,6 +24,7 @@ public class EmployeeModel
     [Required]
     public string HomeAddress { get; set; }
 
+    public string GetFullName() => $"{FirstName} {LastName} {Patronymic}";
 
     //EF navigations
     public DepartmentModel Department { get; set; }
