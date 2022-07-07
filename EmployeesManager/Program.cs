@@ -28,9 +28,8 @@ internal static class Program
     {
         services.AddLogging(configure => configure.AddConsole())
                 .AddSingleton<MainForm>()
-                .AddSingleton<AddingEmployeeForm>()
                 .AddSingleton(x => MaterialSkinManager.Instance)
-                .AddDbContext<MainCTX>(options=> options.UseSqlite("Filename=MainCTX.db")); // It would be possible to export it to the configuration file, but not today...
+                .AddDbContext<MainCTX>(options => options.UseSqlite("Filename=MainCTX.db")); // It would be possible to export it to the configuration file, but not today...
 
         return services.BuildServiceProvider();
     }

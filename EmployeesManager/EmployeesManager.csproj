@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <Folder Include="Resources\Icons\" />
+    <Folder Include="Views\ModifyWindows\" />
   </ItemGroup>
 
   <ItemGroup>
