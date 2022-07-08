@@ -50,6 +50,9 @@ internal class EmployeesDGManagment : BaseDGManagment, IDataFromDepartment
 
     public Task UpdateDataByDepartment(Guid departmentID)
     {
+        if (departmentID == Guid.Empty) 
+            return UpdateData();
+
         _View.Rows.Clear();
         var parsedEmployees = _mainCTX.Employees.Where(e => e.Department.DepartmentID == departmentID)?.Select(e => new string[]
         {

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.materialCard = new MaterialSkin.Controls.MaterialCard();
+            this.materialComboBoxDepartmentsFilter = new MaterialSkin.Controls.MaterialComboBox();
             this.materialButtonDelete = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonEdit = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonAdd = new MaterialSkin.Controls.MaterialButton();
@@ -40,6 +41,7 @@
             // materialCard
             // 
             this.materialCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard.Controls.Add(this.materialComboBoxDepartmentsFilter);
             this.materialCard.Controls.Add(this.materialButtonDelete);
             this.materialCard.Controls.Add(this.materialButtonEdit);
             this.materialCard.Controls.Add(this.materialButtonAdd);
@@ -53,6 +55,31 @@
             this.materialCard.Padding = new System.Windows.Forms.Padding(14);
             this.materialCard.Size = new System.Drawing.Size(790, 50);
             this.materialCard.TabIndex = 1;
+            // 
+            // materialComboBoxDepartmentsFilter
+            // 
+            this.materialComboBoxDepartmentsFilter.AutoResize = false;
+            this.materialComboBoxDepartmentsFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBoxDepartmentsFilter.Depth = 0;
+            this.materialComboBoxDepartmentsFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBoxDepartmentsFilter.DropDownHeight = 118;
+            this.materialComboBoxDepartmentsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBoxDepartmentsFilter.DropDownWidth = 121;
+            this.materialComboBoxDepartmentsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBoxDepartmentsFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBoxDepartmentsFilter.FormattingEnabled = true;
+            this.materialComboBoxDepartmentsFilter.IntegralHeight = false;
+            this.materialComboBoxDepartmentsFilter.ItemHeight = 29;
+            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(243, 8);
+            this.materialComboBoxDepartmentsFilter.MaxDropDownItems = 4;
+            this.materialComboBoxDepartmentsFilter.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBoxDepartmentsFilter.Name = "materialComboBoxDepartmentsFilter";
+            this.materialComboBoxDepartmentsFilter.Size = new System.Drawing.Size(121, 35);
+            this.materialComboBoxDepartmentsFilter.StartIndex = 0;
+            this.materialComboBoxDepartmentsFilter.TabIndex = 3;
+            this.materialComboBoxDepartmentsFilter.UseTallSize = false;
+            this.materialComboBoxDepartmentsFilter.Visible = false;
+            this.materialComboBoxDepartmentsFilter.SelectedIndexChanged += new System.EventHandler(this.materialComboBoxDepartmentsFilter_SelectedIndexChanged);
             // 
             // materialButtonDelete
             // 
@@ -161,5 +188,6 @@
         private MaterialSkin.Controls.MaterialButton materialButtonEdit;
         private MaterialSkin.Controls.MaterialButton materialButtonAdd;
         private DataGridView dataGridView;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBoxDepartmentsFilter;
     }
 }

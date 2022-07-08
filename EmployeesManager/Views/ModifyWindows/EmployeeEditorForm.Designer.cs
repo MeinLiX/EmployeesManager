@@ -39,7 +39,7 @@
             this.materialTextBoxEmployeeLastName = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabelEmployeePatronymic = new MaterialSkin.Controls.MaterialLabel();
             this.materialTextBoxEmployeePatronymic = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialComboBoxEmployeeDeportment = new MaterialSkin.Controls.MaterialComboBox();
+            this.materialComboBoxEmployeeDepartment = new MaterialSkin.Controls.MaterialComboBox();
             this.materialLabelEmployeeDepartment = new MaterialSkin.Controls.MaterialLabel();
             this.materialLabelEmployeePosition = new MaterialSkin.Controls.MaterialLabel();
             this.materialComboBoxEmployeePosition = new MaterialSkin.Controls.MaterialComboBox();
@@ -241,29 +241,29 @@
             this.materialTextBoxEmployeePatronymic.TrailingIcon = null;
             this.materialTextBoxEmployeePatronymic.UseTallSize = false;
             // 
-            // materialComboBoxEmployeeDeportment
+            // materialComboBoxEmployeeDepartment
             // 
-            this.materialComboBoxEmployeeDeportment.AutoResize = false;
-            this.materialComboBoxEmployeeDeportment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.materialComboBoxEmployeeDeportment.Depth = 0;
-            this.materialComboBoxEmployeeDeportment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBoxEmployeeDeportment.DropDownHeight = 118;
-            this.materialComboBoxEmployeeDeportment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.materialComboBoxEmployeeDeportment.DropDownWidth = 121;
-            this.materialComboBoxEmployeeDeportment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialComboBoxEmployeeDeportment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.materialComboBoxEmployeeDeportment.FormattingEnabled = true;
-            this.materialComboBoxEmployeeDeportment.Hint = "Select Department";
-            this.materialComboBoxEmployeeDeportment.IntegralHeight = false;
-            this.materialComboBoxEmployeeDeportment.ItemHeight = 29;
-            this.materialComboBoxEmployeeDeportment.Location = new System.Drawing.Point(367, 160);
-            this.materialComboBoxEmployeeDeportment.MaxDropDownItems = 4;
-            this.materialComboBoxEmployeeDeportment.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialComboBoxEmployeeDeportment.Name = "materialComboBoxEmployeeDeportment";
-            this.materialComboBoxEmployeeDeportment.Size = new System.Drawing.Size(167, 35);
-            this.materialComboBoxEmployeeDeportment.StartIndex = 0;
-            this.materialComboBoxEmployeeDeportment.TabIndex = 12;
-            this.materialComboBoxEmployeeDeportment.UseTallSize = false;
+            this.materialComboBoxEmployeeDepartment.AutoResize = false;
+            this.materialComboBoxEmployeeDepartment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialComboBoxEmployeeDepartment.Depth = 0;
+            this.materialComboBoxEmployeeDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.materialComboBoxEmployeeDepartment.DropDownHeight = 118;
+            this.materialComboBoxEmployeeDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.materialComboBoxEmployeeDepartment.DropDownWidth = 121;
+            this.materialComboBoxEmployeeDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialComboBoxEmployeeDepartment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialComboBoxEmployeeDepartment.FormattingEnabled = true;
+            this.materialComboBoxEmployeeDepartment.Hint = "Select Department";
+            this.materialComboBoxEmployeeDepartment.IntegralHeight = false;
+            this.materialComboBoxEmployeeDepartment.ItemHeight = 29;
+            this.materialComboBoxEmployeeDepartment.Location = new System.Drawing.Point(367, 160);
+            this.materialComboBoxEmployeeDepartment.MaxDropDownItems = 4;
+            this.materialComboBoxEmployeeDepartment.MouseState = MaterialSkin.MouseState.OUT;
+            this.materialComboBoxEmployeeDepartment.Name = "materialComboBoxEmployeeDepartment";
+            this.materialComboBoxEmployeeDepartment.Size = new System.Drawing.Size(167, 35);
+            this.materialComboBoxEmployeeDepartment.StartIndex = 0;
+            this.materialComboBoxEmployeeDepartment.TabIndex = 12;
+            this.materialComboBoxEmployeeDepartment.UseTallSize = false;
             // 
             // materialLabelEmployeeDepartment
             // 
@@ -489,7 +489,7 @@
             this.Controls.Add(this.materialComboBoxEmployeeKPI);
             this.Controls.Add(this.materialComboBoxEmployeePosition);
             this.Controls.Add(this.materialLabelEmployeeDepartment);
-            this.Controls.Add(this.materialComboBoxEmployeeDeportment);
+            this.Controls.Add(this.materialComboBoxEmployeeDepartment);
             this.Controls.Add(this.materialLabelEmployeePatronymic);
             this.Controls.Add(this.materialTextBoxEmployeePatronymic);
             this.Controls.Add(this.materialLabelEmployeeLastName);
@@ -508,6 +508,7 @@
             this.Sizable = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddingDepartmentForm";
+            this.Load += new System.EventHandler(this.EmployeeEditorForm_Load);
             this.materialCardHeader.ResumeLayout(false);
             this.materialCardHeader.PerformLayout();
             this.materialCardFoother.ResumeLayout(false);
@@ -529,7 +530,7 @@
         private MaterialSkin.Controls.MaterialTextBox materialTextBoxEmployeeLastName;
         private MaterialSkin.Controls.MaterialLabel materialLabelEmployeePatronymic;
         private MaterialSkin.Controls.MaterialTextBox materialTextBoxEmployeePatronymic;
-        private MaterialSkin.Controls.MaterialComboBox materialComboBoxEmployeeDeportment;
+        private MaterialSkin.Controls.MaterialComboBox materialComboBoxEmployeeDepartment;
         private MaterialSkin.Controls.MaterialLabel materialLabelEmployeeDepartment;
         private MaterialSkin.Controls.MaterialLabel materialLabelEmployeePosition;
         private MaterialSkin.Controls.MaterialComboBox materialComboBoxEmployeePosition;
