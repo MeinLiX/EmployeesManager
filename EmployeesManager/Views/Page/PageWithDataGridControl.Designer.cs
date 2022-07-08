@@ -34,6 +34,7 @@
             this.materialButtonEdit = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonAdd = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.materialLabelHeader = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -41,6 +42,7 @@
             // materialCard
             // 
             this.materialCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.materialCard.Controls.Add(this.materialLabelHeader);
             this.materialCard.Controls.Add(this.materialComboBoxDepartmentsFilter);
             this.materialCard.Controls.Add(this.materialButtonDelete);
             this.materialCard.Controls.Add(this.materialButtonEdit);
@@ -58,6 +60,7 @@
             // 
             // materialComboBoxDepartmentsFilter
             // 
+            this.materialComboBoxDepartmentsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialComboBoxDepartmentsFilter.AutoResize = false;
             this.materialComboBoxDepartmentsFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialComboBoxDepartmentsFilter.Depth = 0;
@@ -70,7 +73,7 @@
             this.materialComboBoxDepartmentsFilter.FormattingEnabled = true;
             this.materialComboBoxDepartmentsFilter.IntegralHeight = false;
             this.materialComboBoxDepartmentsFilter.ItemHeight = 29;
-            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(243, 8);
+            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(416, 8);
             this.materialComboBoxDepartmentsFilter.MaxDropDownItems = 4;
             this.materialComboBoxDepartmentsFilter.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBoxDepartmentsFilter.Name = "materialComboBoxDepartmentsFilter";
@@ -83,12 +86,13 @@
             // 
             // materialButtonDelete
             // 
+            this.materialButtonDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButtonDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButtonDelete.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButtonDelete.Depth = 0;
             this.materialButtonDelete.HighEmphasis = true;
             this.materialButtonDelete.Icon = null;
-            this.materialButtonDelete.Location = new System.Drawing.Point(152, 7);
+            this.materialButtonDelete.Location = new System.Drawing.Point(555, 7);
             this.materialButtonDelete.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonDelete.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonDelete.Name = "materialButtonDelete";
@@ -103,12 +107,13 @@
             // 
             // materialButtonEdit
             // 
+            this.materialButtonEdit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButtonEdit.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButtonEdit.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButtonEdit.Depth = 0;
             this.materialButtonEdit.HighEmphasis = true;
             this.materialButtonEdit.Icon = null;
-            this.materialButtonEdit.Location = new System.Drawing.Point(80, 7);
+            this.materialButtonEdit.Location = new System.Drawing.Point(636, 7);
             this.materialButtonEdit.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonEdit.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonEdit.Name = "materialButtonEdit";
@@ -123,12 +128,13 @@
             // 
             // materialButtonAdd
             // 
+            this.materialButtonAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.materialButtonAdd.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.materialButtonAdd.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
             this.materialButtonAdd.Depth = 0;
             this.materialButtonAdd.HighEmphasis = true;
             this.materialButtonAdd.Icon = null;
-            this.materialButtonAdd.Location = new System.Drawing.Point(8, 7);
+            this.materialButtonAdd.Location = new System.Drawing.Point(708, 7);
             this.materialButtonAdd.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButtonAdd.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButtonAdd.Name = "materialButtonAdd";
@@ -166,6 +172,19 @@
             this.dataGridView.Size = new System.Drawing.Size(787, 329);
             this.dataGridView.TabIndex = 5;
             // 
+            // materialLabelHeader
+            // 
+            this.materialLabelHeader.AutoSize = true;
+            this.materialLabelHeader.Depth = 0;
+            this.materialLabelHeader.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabelHeader.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.materialLabelHeader.Location = new System.Drawing.Point(17, 12);
+            this.materialLabelHeader.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelHeader.Name = "materialLabelHeader";
+            this.materialLabelHeader.Size = new System.Drawing.Size(63, 24);
+            this.materialLabelHeader.TabIndex = 6;
+            this.materialLabelHeader.Text = "Viewer";
+            // 
             // PageWithDataGridControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -189,5 +208,6 @@
         private MaterialSkin.Controls.MaterialButton materialButtonAdd;
         private DataGridView dataGridView;
         private MaterialSkin.Controls.MaterialComboBox materialComboBoxDepartmentsFilter;
+        private MaterialSkin.Controls.MaterialLabel materialLabelHeader;
     }
 }

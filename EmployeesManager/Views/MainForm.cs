@@ -50,10 +50,10 @@ public partial class MainForm : MaterialForm
                     await pageWithDataGridControlPositions.UpdateView();
                     break;
                 case 3:
-                    payoutsPageControl.ShowUpdate();
+                    await payoutsPageControl.UpdateView();
                     break;
                 case 4:
-                    reportPageControl.ShowUpdate();
+                    await reportPageControl.UpdateView();
                     break;
                 default:
                     throw new Exception("Unvaliable page.");

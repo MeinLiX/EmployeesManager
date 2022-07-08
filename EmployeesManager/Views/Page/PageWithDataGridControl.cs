@@ -1,16 +1,16 @@
-﻿
-using EmployeesManager.Context;
+﻿using EmployeesManager.Context;
 using EmployeesManager.Views.ModifyWindows;
 using EmployeesManager.Views.ModifyWindows.Interfaces;
 using EmployeesManager.Views.Page.DataGridManagment;
 using EmployeesManager.Views.Page.DataGridManagment.Interfaces;
+using EmployeesManager.Views.Page.Interfaces;
 using MaterialSkin.Controls;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace EmployeesManager.Views.Page;
 
-public partial class PageWithDataGridControl : UserControl
+public partial class PageWithDataGridControl : UserControl, IControllWithServices
 {
     private IServiceProvider _serviceProvider;
     private ILogger _logger;
@@ -25,13 +25,19 @@ public partial class PageWithDataGridControl : UserControl
         InitializeComponent();
     }
 
-    public void UpServices(IServiceProvider serviceProvider, ControlMode mode)
+    public void UpServices(IServiceProvider serviceProvider)
     {
-        _currentMode = mode;
-
         _serviceProvider = serviceProvider;
         _logger = serviceProvider.GetRequiredService<ILogger<PageWithDataGridControl>>();
         _mainCTX = serviceProvider.GetRequiredService<MainCTX>();
+
+        _logger.LogInformation($"{this.Name} services have been successfully registered {DateTime.UtcNow}");
+    }
+
+    public void UpServices(IServiceProvider serviceProvider, ControlMode mode)
+    {
+        UpServices(serviceProvider);
+        _currentMode = mode;
 
         _dgManagment = _currentMode switch
         {
@@ -39,10 +45,8 @@ public partial class PageWithDataGridControl : UserControl
             ControlMode.Departments => new DepartmentsDGManagment(dataGridView, _mainCTX),
             ControlMode.Positions => new PositionsDGManagment(dataGridView, _mainCTX),
         };
-
+        materialLabelHeader.Text = _currentMode.ToString();
         _dgManagment.BuildHeader();
-
-        _logger.LogInformation($"{this.Name} services have been successfully registered {DateTime.UtcNow}");
     }
 
     private void CheckServices()

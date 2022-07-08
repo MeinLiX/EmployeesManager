@@ -1,10 +1,11 @@
 ﻿using EmployeesManager.Context;
+using EmployeesManager.Views.Page.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
 namespace EmployeesManager.Views.Page;
 
-public partial class ReportPageControl : UserControl
+public partial class ReportPageControl : UserControl, IControllWithServices
 {
     private ILogger _logger;
     private MainCTX _mainCTX;
@@ -28,8 +29,10 @@ public partial class ReportPageControl : UserControl
         if (_mainCTX is null) throw new Exception($"{this.Name} database service exceptions.");
     }
 
-    public void ShowUpdate()
+    public Task UpdateView()
     {
         CheckServices();
+
+        return Task.CompletedTask;
     }
 }
