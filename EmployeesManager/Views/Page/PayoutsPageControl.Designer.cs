@@ -42,22 +42,22 @@
             this.materialComboBoxDepartmentsFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialComboBoxDepartmentsFilter.Depth = 0;
             this.materialComboBoxDepartmentsFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBoxDepartmentsFilter.DropDownHeight = 118;
+            this.materialComboBoxDepartmentsFilter.DropDownHeight = 174;
             this.materialComboBoxDepartmentsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.materialComboBoxDepartmentsFilter.DropDownWidth = 121;
             this.materialComboBoxDepartmentsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialComboBoxDepartmentsFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialComboBoxDepartmentsFilter.FormattingEnabled = true;
+            this.materialComboBoxDepartmentsFilter.Hint = "Department Filter";
             this.materialComboBoxDepartmentsFilter.IntegralHeight = false;
-            this.materialComboBoxDepartmentsFilter.ItemHeight = 29;
-            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(612, 8);
+            this.materialComboBoxDepartmentsFilter.ItemHeight = 43;
+            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(599, 3);
             this.materialComboBoxDepartmentsFilter.MaxDropDownItems = 4;
             this.materialComboBoxDepartmentsFilter.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBoxDepartmentsFilter.Name = "materialComboBoxDepartmentsFilter";
-            this.materialComboBoxDepartmentsFilter.Size = new System.Drawing.Size(161, 35);
+            this.materialComboBoxDepartmentsFilter.Size = new System.Drawing.Size(166, 49);
             this.materialComboBoxDepartmentsFilter.StartIndex = 0;
             this.materialComboBoxDepartmentsFilter.TabIndex = 4;
-            this.materialComboBoxDepartmentsFilter.UseTallSize = false;
             this.materialComboBoxDepartmentsFilter.Visible = false;
             this.materialComboBoxDepartmentsFilter.SelectedIndexChanged += new System.EventHandler(this.materialComboBoxDepartmentsFilter_SelectedIndexChanged);
             // 

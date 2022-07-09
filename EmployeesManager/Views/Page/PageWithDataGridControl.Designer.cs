@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.materialCard = new MaterialSkin.Controls.MaterialCard();
+            this.materialLabelHeader = new MaterialSkin.Controls.MaterialLabel();
             this.materialComboBoxDepartmentsFilter = new MaterialSkin.Controls.MaterialComboBox();
             this.materialButtonDelete = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonEdit = new MaterialSkin.Controls.MaterialButton();
             this.materialButtonAdd = new MaterialSkin.Controls.MaterialButton();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.materialLabelHeader = new MaterialSkin.Controls.MaterialLabel();
             this.materialCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,19 @@
             this.materialCard.Size = new System.Drawing.Size(790, 50);
             this.materialCard.TabIndex = 1;
             // 
+            // materialLabelHeader
+            // 
+            this.materialLabelHeader.AutoSize = true;
+            this.materialLabelHeader.Depth = 0;
+            this.materialLabelHeader.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.materialLabelHeader.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
+            this.materialLabelHeader.Location = new System.Drawing.Point(17, 12);
+            this.materialLabelHeader.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialLabelHeader.Name = "materialLabelHeader";
+            this.materialLabelHeader.Size = new System.Drawing.Size(63, 24);
+            this.materialLabelHeader.TabIndex = 6;
+            this.materialLabelHeader.Text = "Viewer";
+            // 
             // materialComboBoxDepartmentsFilter
             // 
             this.materialComboBoxDepartmentsFilter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -65,22 +78,22 @@
             this.materialComboBoxDepartmentsFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.materialComboBoxDepartmentsFilter.Depth = 0;
             this.materialComboBoxDepartmentsFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.materialComboBoxDepartmentsFilter.DropDownHeight = 118;
+            this.materialComboBoxDepartmentsFilter.DropDownHeight = 174;
             this.materialComboBoxDepartmentsFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.materialComboBoxDepartmentsFilter.DropDownWidth = 121;
             this.materialComboBoxDepartmentsFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             this.materialComboBoxDepartmentsFilter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.materialComboBoxDepartmentsFilter.FormattingEnabled = true;
+            this.materialComboBoxDepartmentsFilter.Hint = "Department Filter";
             this.materialComboBoxDepartmentsFilter.IntegralHeight = false;
-            this.materialComboBoxDepartmentsFilter.ItemHeight = 29;
-            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(416, 8);
+            this.materialComboBoxDepartmentsFilter.ItemHeight = 43;
+            this.materialComboBoxDepartmentsFilter.Location = new System.Drawing.Point(369, 4);
             this.materialComboBoxDepartmentsFilter.MaxDropDownItems = 4;
             this.materialComboBoxDepartmentsFilter.MouseState = MaterialSkin.MouseState.OUT;
             this.materialComboBoxDepartmentsFilter.Name = "materialComboBoxDepartmentsFilter";
-            this.materialComboBoxDepartmentsFilter.Size = new System.Drawing.Size(121, 35);
+            this.materialComboBoxDepartmentsFilter.Size = new System.Drawing.Size(164, 49);
             this.materialComboBoxDepartmentsFilter.StartIndex = 0;
             this.materialComboBoxDepartmentsFilter.TabIndex = 3;
-            this.materialComboBoxDepartmentsFilter.UseTallSize = false;
             this.materialComboBoxDepartmentsFilter.Visible = false;
             this.materialComboBoxDepartmentsFilter.SelectedIndexChanged += new System.EventHandler(this.materialComboBoxDepartmentsFilter_SelectedIndexChanged);
             // 
@@ -155,7 +168,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dataGridView.Location = new System.Drawing.Point(0, 52);
@@ -171,19 +184,6 @@
             this.dataGridView.ShowRowErrors = false;
             this.dataGridView.Size = new System.Drawing.Size(787, 329);
             this.dataGridView.TabIndex = 5;
-            // 
-            // materialLabelHeader
-            // 
-            this.materialLabelHeader.AutoSize = true;
-            this.materialLabelHeader.Depth = 0;
-            this.materialLabelHeader.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabelHeader.FontType = MaterialSkin.MaterialSkinManager.fontType.H6;
-            this.materialLabelHeader.Location = new System.Drawing.Point(17, 12);
-            this.materialLabelHeader.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabelHeader.Name = "materialLabelHeader";
-            this.materialLabelHeader.Size = new System.Drawing.Size(63, 24);
-            this.materialLabelHeader.TabIndex = 6;
-            this.materialLabelHeader.Text = "Viewer";
             // 
             // PageWithDataGridControl
             // 
